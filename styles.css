@@ -604,13 +604,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .story-subsection {
   padding: 86px 0;
   display: grid;
-  grid-template-columns: minmax(270px, 0.64fr) minmax(0, 1.36fr);
+  grid-template-columns: minmax(270px, 0.52fr) minmax(0, 1.48fr);
   align-items: center;
-  gap: clamp(50px, 8vw, 110px);
+  gap: clamp(42px, 6vw, 80px);
   border-top: 1px solid var(--line);
 }
 .story-subsection:first-of-type { padding-top: 0; border-top: 0; }
 .story-subsection:last-child { padding-bottom: 0; }
+.story-subsection-reverse { grid-template-columns: minmax(0, 1.48fr) minmax(270px, 0.52fr); }
 .story-subsection-reverse .story-subsection-copy { order: 2; }
 .story-subsection-reverse .paired-photos { order: 1; }
 .story-kicker { margin-bottom: 17px; color: var(--coral); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; }
