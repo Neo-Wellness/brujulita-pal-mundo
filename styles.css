@@ -90,11 +90,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .nav-toggle > span:not(.sr-only) { display: block; width: 22px; height: 1.5px; margin: 6px auto; background: currentColor; transition: transform 180ms ease; }
 
 .hero { padding: 50px 0 32px; overflow: hidden; }
-.hero-grid { min-height: 600px; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr); align-items: center; gap: clamp(48px, 4.5vw, 64px); }
+.hero-grid { min-height: 600px; display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(400px, 0.78fr); align-items: center; gap: clamp(44px, 4vw, 56px); }
 .hero-copy { position: relative; z-index: 2; min-width: 0; padding-left: clamp(0px, 1vw, 12px); }
 .eyebrow { margin-bottom: 22px; color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; }
 .eyebrow::before { content: ""; display: inline-block; width: 26px; height: 1px; margin: 0 11px 3px 0; background: currentColor; }
-.hero h1 { max-width: 640px; margin-bottom: 28px; font-size: clamp(45px, 4.2vw, 54px); line-height: 1.34; }
+.hero h1 { max-width: 700px; margin-bottom: 30px; font-size: clamp(46px, 4.8vw, 64px); line-height: 1.27; }
 .hero h1 .title-line { display: block; }
 .hero h1::first-line { color: var(--ink-deep); }
 .hero-lead { max-width: 540px; margin-bottom: 38px; color: var(--cacao); font-size: 17px; line-height: 2; }
@@ -265,6 +265,17 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 .js .reveal { opacity: 0; transform: translateY(16px); }
 .js .reveal.is-visible { opacity: 1; transform: translateY(0); transition: opacity 600ms ease, transform 600ms ease; transition-delay: var(--reveal-delay, 0ms); }
+
+@media (min-width: 1081px) {
+  .hero h1 .title-line { white-space: nowrap; }
+}
+
+@media (max-width: 1080px) {
+  .hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 50px; }
+  .hero-copy { max-width: 760px; padding-left: 0; }
+  .hero-visual { min-height: auto; }
+  .hero-visual img { height: min(62vw, 560px); border-radius: 180px 180px var(--radius-lg) var(--radius-lg); }
+}
 
 @media (max-width: 980px) {
   .shell { width: min(100% - 44px, 860px); }
