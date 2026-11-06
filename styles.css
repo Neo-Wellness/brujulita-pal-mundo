@@ -539,11 +539,25 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   background: white;
   box-shadow: var(--shadow-soft);
 }
-.flag-card img { width: 100%; aspect-ratio: 1.6; object-fit: cover; }
+.flag-card img { width: 100%; height: auto; aspect-ratio: 1.6; object-fit: cover; }
 .flag-card figcaption { padding: 24px 26px 27px; }
 .flag-card figcaption span { display: block; color: var(--coral); font-family: var(--serif); font-size: 19px; }
 .flag-card figcaption strong { display: block; margin: 4px 0 9px; font-family: var(--serif); font-size: 20px; }
 .flag-card figcaption p { margin-bottom: 0; color: var(--cacao); font-size: 13px; line-height: 1.75; }
+.flag-card figcaption .flag-credit {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.65;
+}
+.flag-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
 
 .story-chapters {
   position: relative;
