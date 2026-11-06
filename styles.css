@@ -301,6 +301,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .article-aside { position: static; }
 }
 
+@media (max-width: 840px) {
+  .goal-panel h3 { font-size: clamp(21px, 6.8vw, 27px); letter-spacing: -0.04em; white-space: nowrap; }
+  .dominicana-preview-copy h2 .preview-title-line { display: block; }
+}
+
 @media (max-width: 760px) {
   html { scroll-padding-top: 74px; }
   body { font-size: 15px; }
