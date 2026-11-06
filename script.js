@@ -65,7 +65,29 @@
     window.addEventListener('scroll', updateProgress, { passive: true });
   }
 
-  const sections = [...document.querySelectorAll('.longform section[id]')];
+  const journey = document.querySelector('[data-journey]');
+  const journeyStart = document.querySelector('#sea');
+  const journeyEnd = document.querySelector('#food');
+  if (journey && journeyStart && journeyEnd) {
+    let journeyFrame;
+    const updateJourney = () => {
+      journeyFrame = 0;
+      const start = journeyStart.offsetTop;
+      const end = journeyEnd.offsetTop + journeyEnd.offsetHeight - window.innerHeight;
+      const span = Math.max(1, end - start);
+      const value = Math.min(100, Math.max(0, ((window.scrollY - start) / span) * 100));
+      journey.style.setProperty('--journey-progress', `${value}%`);
+    };
+    const requestJourneyUpdate = () => {
+      if (journeyFrame) return;
+      journeyFrame = window.requestAnimationFrame(updateJourney);
+    };
+    updateJourney();
+    window.addEventListener('scroll', requestJourneyUpdate, { passive: true });
+    window.addEventListener('resize', requestJourneyUpdate);
+  }
+
+  const sections = [...document.querySelectorAll('.longform section[id], .story-section[id]')];
   const tocLinks = [...document.querySelectorAll('.toc a')];
   if (sections.length && tocLinks.length && 'IntersectionObserver' in window) {
     const sectionObserver = new IntersectionObserver((entries) => {
