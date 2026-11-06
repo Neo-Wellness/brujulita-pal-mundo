@@ -304,6 +304,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 @media (max-width: 840px) {
   .goal-panel h3 { font-size: clamp(21px, 6.8vw, 27px); letter-spacing: -0.04em; white-space: nowrap; }
   .dominicana-preview-copy h2 .preview-title-line { display: block; }
+  .story-mobile-line { display: block; white-space: nowrap; }
+  .story-desktop-punctuation { display: none; }
 }
 
 @media (max-width: 760px) {
@@ -813,12 +815,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .story-number { margin-bottom: 22px; font-size: 48px; }
   .story-section-header > p:last-child { grid-column: auto; margin-top: 26px; }
   .story-section-header h2 { font-size: 36px; }
+  .story-section-header h2 .story-mobile-line { font-size: clamp(28px, 8.8vw, 36px); }
   .photo-mosaic-sea { grid-template-columns: 1fr; }
   .photo-mosaic-sea .photo-card:nth-child(n) { grid-column: auto; grid-row: auto; }
   .photo-mosaic-sea .photo-card:nth-child(n) img { aspect-ratio: 1.42; object-position: center; }
   .photo-card figcaption { min-height: auto; padding: 15px 17px 17px; }
   .story-subsection { padding: 68px 0; gap: 32px; }
   .story-subsection-copy h3 { font-size: 30px; }
+  .story-subsection-copy h3 .story-mobile-line { font-size: clamp(26px, 8.2vw, 30px); }
   .paired-photos { grid-template-columns: 1fr; }
   .paired-photos .photo-card-portrait { width: 78%; justify-self: center; }
   .people-gallery { grid-template-columns: 1fr; }
