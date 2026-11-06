@@ -444,6 +444,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   font-size: clamp(38px, 4vw, 54px);
   line-height: 1.38;
 }
+.dominicana-preview-copy h2 .preview-title-line { display: block; }
 .dominicana-preview-copy > p:not(.eyebrow) {
   max-width: 530px;
   margin-bottom: 30px;
@@ -485,6 +486,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   font-size: clamp(48px, 6.4vw, 86px);
   line-height: 1.18;
 }
+.story-hero h1 .story-mobile-line { display: block; }
 .story-deck {
   max-width: 730px;
   margin-bottom: 0;
