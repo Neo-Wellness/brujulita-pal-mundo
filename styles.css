@@ -193,8 +193,28 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .article-link i { font-size: 22px; font-style: normal; transition: transform 180ms ease; }
 .article-link:hover i { transform: translateX(7px); }
 
-.contact-section { position: relative; padding: 118px 0; overflow: hidden; color: white; background: linear-gradient(135deg, var(--ink) 0%, var(--ink-deep) 100%); text-align: center; }
-.contact-section::before { display: none; }
+.contact-section {
+  --contact-watermark-size: clamp(520px, 48vw, 720px);
+  position: relative;
+  padding: 118px 0;
+  overflow: hidden;
+  color: white;
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-deep) 100%);
+  text-align: center;
+}
+.contact-section::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: var(--contact-watermark-size);
+  aspect-ratio: 1;
+  right: calc(var(--contact-watermark-size) / -2);
+  bottom: calc(var(--contact-watermark-size) / -2);
+  background: url("./assets/brujulita-logo-transparent.png") center / contain no-repeat;
+  filter: brightness(0) invert(1);
+  opacity: 0.09;
+  pointer-events: none;
+}
 .contact-inner { position: relative; z-index: 1; }
 .contact-section .eyebrow { color: var(--gold); }
 .contact-section .eyebrow::before { display: none; }
@@ -367,7 +387,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .why-card:last-child { border-bottom: 0; }
   .why-card > span { margin-bottom: 30px; }
   .why-quote blockquote { font-size: 27px; }
-  .contact-section { padding: 88px 0; }
+  .contact-section { --contact-watermark-size: 460px; padding: 88px 0; }
   .contact-section h2 { font-size: 36px; }
   .footer-grid { grid-template-columns: 1fr; }
   .site-footer nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 24px; }
